@@ -10,7 +10,7 @@ module.exports = {
   siteBanner: "/social/banner.jpg", // Your image for og:image tag. You can find it in the /static folder
   favicon: "src/favicon.png", // Your image for favicons. You can find it in the /src folder
   siteDescription: "Software Developer Blog. Less is more.", // Your site description
-  author: "LekoArts", // Author for schemaORGJSONLD
+  author: "Jay Looney", // Author for schemaORGJSONLD
   siteLogo: "/social/logo.png", // Image for schemaORGJSONLD
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
