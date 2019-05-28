@@ -1,14 +1,14 @@
 import { lighten } from "polished";
 
 const colors = {
-  primary: "#0693d1", // Color for buttons or links
-  primaryLight: lighten(0.05, "#0693d1"),
+  primary: "#006699", // Color for buttons or links
+  primaryLight: lighten(0.05, "#006699"),
   bg: "white", // Background color
   grey: {
     dark: "rgba(0, 0, 0, 0.9)",
-    default: "rgba(0, 0, 0, 0.7)",
-    light: "rgba(0, 0, 0, 0.5)",
-    ultraLight: "rgba(0, 0, 0, 0.25)"
+    default: "rgba(0, 0, 0, 0.8)",
+    light: "rgba(0, 0, 0, 0.7)",
+    ultraLight: "rgba(0, 0, 0, 0.5)"
   },
   white: "white"
 };
