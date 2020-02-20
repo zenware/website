@@ -1,9 +1,9 @@
----
-date: "2018-01-03"
-title: "Use component in MDX"
-categories:
-  - Coding
----
++++
+date = "2020-02-19T20:20:41-06:00"
+draft = true
+title = "Use component in MDX"
+
++++
 
 import SpotifyPlayer from "../../src/components/SpotifyPlayer";
 

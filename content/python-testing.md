@@ -1,11 +1,9 @@
----
-date: "2019-05-28"
-title: "Testing Python Code"
-categories:
-  - Coding
-  - Help
-  - Python
----
++++
+date = "2020-02-19t20:20:41-06:00"
+draft = true
+title = "testing python code"
+
++++
 
 The following is a selection of some Python testing libraries, commandline tools, etc. that I use, find cool, and have found real utility in when testing Python Code.
 
