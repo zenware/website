@@ -1,3 +1,4 @@
 baseurl = "https://www.jaylooney.dev/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+theme = "zenware"
