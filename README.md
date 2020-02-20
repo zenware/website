@@ -1,6 +1,15 @@
-# Gatsby Starter: Minimal Blog
+# [www.jaylooney.dev](https://www.jaylooney.dev)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2eeb5177-debb-422f-b042-3d0336bfd884/deploy-status)](https://app.netlify.com/sites/jaylooney/deploys)
 
-Typography driven, focus on the content & minimal style. Powered by MDX.
+This is my personal website.
+It's deployed to [netlify](https://www.netlify.com/), a nice modern PaaS for static sites.
+Originally based on LekoArts gatsby-starter-minimal-blog template.
+
+Currently it's based on Hugo.
+
+## About Me
+
+I'm a software developer.
 
 [Demo Website](https://minimal-blog.lekoarts.de)
 
@@ -8,27 +17,9 @@ Typography driven, focus on the content & minimal style. Powered by MDX.
 
 [![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-minimal-blog.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-minimal-blog) [![Netlify Status](https://api.netlify.com/api/v1/badges/f466015c-14f4-440d-a92b-0b0e30de609a/deploy-status)](https://app.netlify.com/sites/minimal-blog/deploys)
 
-## About Me
-
-I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
-
-Also check out the other _gatsby-starters_:
-
-- [gatsby-starter-portfolio-emma](https://github.com/LekoArts/gatsby-starter-portfolio-emma)
-- [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
-- [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
-- [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
-- [gatsby-starter-portfolio-jodie](https://github.com/LekoArts/gatsby-starter-portfolio-jodie)
-- [gatsby-starter-prismic](https://github.com/LekoArts/gatsby-starter-prismic)
-- [gatsby-starter-prismic-i18n](https://github.com/LekoArts/gatsby-starter-prismic-i18n)
-
-Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
-
 ## Features
 
-- Articles in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
 - Code highlighting (with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)) and live preview (with [react-live](https://github.com/FormidableLabs/react-live))
-- Styled Components 💅
 - Netlify Contact Form
 - Categories
 - Offline Support
@@ -41,22 +32,11 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 ## Getting Started
 
-Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
-
-- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
-
-To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
-
 ```
 gatsby new project-name https://github.com/LekoArts/gatsby-starter-minimal-blog
 cd project-name
 npm run develop
 ```
-
-### Adding new features/plugins
-
-You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/docs/plugins/)
 
 ### Building your site
 
