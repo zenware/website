@@ -38,14 +38,15 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop -o",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore", 
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:ci": "yarn lint --format junit -o results/eslint/result.xml",
-    "format": "prettier --parser mdx --write \"blog/**/**/*.mdx\""
+    "start": "run-p start:**",
+    "start:hugo": "hugo -d ../dist -s site -vw",
+    "preview": "run-p preview:**",
+    "preview:hugo": "npm run start:hugo -- -D -F",
+    "build": "nmp run build:hugo",
+    "build:hugo": "hugo -d ../dist -s site -v"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
