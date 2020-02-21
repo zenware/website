@@ -1,6 +1,6 @@
 ---
-title: "Ananke: a Hugo Theme"
+title: "Software Developer"
 featured_image: '/images/gohugo-default-sample-hero-image.jpg'
-description: "The last theme you'll ever need. Maybe."
+description: "Meow meow meow."
 ---
-Welcome to my blog with some of my work in progress. I've been working on this book idea. You can read some of the chapters below.
+I'm Jay Looney, a Senior Software Developer with five years of industry experience, generalizing in technology related stuff. Contact Me.
