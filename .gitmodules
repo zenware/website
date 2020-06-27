@@ -1,6 +1,6 @@
-[submodule "site/themes/zenware"]
-	path = site/themes/zenware
+[submodule "themes/zenware"]
+	path = themes/zenware
 	url = https://github.com/zenware/gohugo-theme-zenware.git
-[submodule "site/themes/ananke"]
-	path = site/themes/ananke
+[submodule "themes/ananke"]
+	path = themes/ananke
 	url = https://github.com/budparr/gohugo-theme-ananke.git
