@@ -1803,7 +1803,7 @@
     gatsby-transformer-sharp "^4.4.0"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^4.1.2":
+"@lekoarts/gatsby-theme-minimal-blog@^4.0.0":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-4.1.2.tgz#94e5ecb480f6ad635bfbee5064caea84ca16ea20"
   integrity sha512-2tj9mtalQYAjMRgedZ2qvtZlqaQunfSlPq/2G2y0yuusOJlaVXToy45Gn/BKfwLZEVtKC9X09dVn0owpLY9BXg==
@@ -3113,9 +3113,9 @@ async@1.5.2:
   integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
 
 async@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.2.tgz#2eb7671034bb2194d45d30e31e24ec7e7f9670cd"
-  integrity sha512-H0E+qZaDEfx/FY4t7iLRv1W2fFI6+pyCeTw1uN20AQPiwqwM6ojPxHxdLv4z8hi2DtnW9BOckSspLucW7pIE5g==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.3.tgz#ac53dafd3f4720ee9e8a160628f18ea91df196c9"
+  integrity sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==
 
 asynckit@^0.4.0:
   version "0.4.0"
