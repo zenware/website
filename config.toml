@@ -1,0 +1,62 @@
+# https://www.getzola.org/documentation/getting-started/configuration/
+# The URL the site will be built for
+base_url = "https://jaylooney.dev"
+# Basics
+title = "Jay Looney"
+description = "Software Developer Blog. Less is more."
+theme = "simplify"
+
+# Generate Atom Feed
+generate_feed = true
+feed_filename = "atom.xml"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+render_emoji = true
+
+[extra]
+# simplify configuration
+avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=200"
+menu = [
+    { name = "Home", url = "/" },
+    { name = "Blog", url = "/blog/" },
+    #{ name = "Tags", url = "/tags/" },
+    #{ name = "Categories", url = "/categories/" },
+    { name = "Feed", url = "/atom.xml/" },
+    { name = "Github", url = "https:/github.com/zenware" }
+]
+footer_credit = true
+math = false
+# end simplify
+
+# Alternative / SEO Site Title
+title_alt = "Jay Looney - Senior Software Engineer"
+
+# schemaORGJSONLD Headline, Author, Image
+headline = "Writing about software, linux, and project management."
+author = "Jay Looney"
+siteLogo = ""
+
+# Empty B64enc png for a favicon.
+favicon = "data:image/png;base64,"
+
+# Usernames, ogData, etc.
+# siteFBAppID: '123456789', // Facebook App ID - Optional
+social_media = [
+    {name = "GitHub", url = "https://github.com/zenware"},
+    {name = "Twitter", url = "https://twitter.com/@jaymlooney"},
+]
+userTwitter = "@jaymlooney"
+ogSiteName = "jaylooney"
+ogLanguage = "en_US"
+googleAnalyticsID = "UA-49252542-6"
+
+# Manifest and Progress color
+# See: https://developers.google.com/web/fundamentals/web-app-manifest/
+theme_color = "#3498DB"
+background_color = "#2b2e3c"
