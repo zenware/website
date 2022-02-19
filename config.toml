@@ -1,12 +1,18 @@
 # https://www.getzola.org/documentation/getting-started/configuration/
 # The URL the site will be built for
 base_url = "https://jaylooney.dev"
+# Basics
+title = "Jay Looney"
+description = "Software Developer Blog. Less is more."
+
+# Generate Atom Feed
+generate_feed = true
+feed_filename = "atom.xml"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
-
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
 [markdown]
 # Whether to do syntax highlighting
@@ -14,4 +20,26 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+
+# Alternative / SEO Site Title
+title_alt = "Jay Looney - Senior Software Engineer"
+
+# schemaORGJSONLD Headline, Author, Image
+headline = "Writing about software, linux, and project management."
+author: "Jay Looney"
+siteLogo: ""
+
+# Empty B64enc png for a favicon.
+favicon: "data:image/png;base64,"
+
+# Usernames, ogData, etc.
+# siteFBAppID: '123456789', // Facebook App ID - Optional
+userTwitter = "@jaymlooney"
+ogSiteName = "jaylooney"
+ogLanguage = "en_US"
+googleAnalyticsID = "UA-49252542-6"
+
+# Manifest and Progress color
+# See: https://developers.google.com/web/fundamentals/web-app-manifest/
+theme_color = "#3498DB"
+background_color = "#2b2e3c"
