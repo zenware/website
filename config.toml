@@ -21,7 +21,7 @@ render_emoji = true
 
 [extra]
 # simplify configuration
-avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=200"
+avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=400"
 menu = [
     { name = "Home", url = "/" },
     { name = "Blog", url = "/blog/" },
