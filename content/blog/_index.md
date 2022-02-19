@@ -1,5 +1,5 @@
 +++
-title = "Personal Blog"
+title = "Blog"
 +++
 
-Hey it's some content.
+All blog posts are sorted by year. Enjoy your reading :smile:
