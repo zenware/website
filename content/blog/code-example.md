@@ -10,7 +10,7 @@ Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt i
 
 ### A live code sample:
 
-```js react-live
+```js
 const onClick = () => {
   alert("You opened me");
 };
