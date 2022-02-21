@@ -1,0 +1,2 @@
+borrowing the mermaid rendering concepts from the [DeepThought Template](https://github.com/RatanShreshtha/DeepThought)
+Some notes about the deepthought shortcodes are here: https://distributed-systems.dev/docs/extended-shortcodes/
