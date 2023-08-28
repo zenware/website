@@ -1,3 +1,5 @@
 [submodule "themes/dose"]
 	path = themes/dose
 	url = git@github.com:oltdaniel/dose.git
+[submodule "themes/dose/"]
+	url = https://github.com/oltdaniel/dose
