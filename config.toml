@@ -3,7 +3,7 @@
 base_url = "https://jaylooney.dev"
 # Basics
 title = "Jay Looney - Software Engineer"
-theme = "simplify"
+theme = "dose"
 
 # Generate Atom Feed
 generate_feed = true
