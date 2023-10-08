@@ -5,3 +5,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2eeb5177-debb-422f-b042-3d0336bfd884/deploy-status)](https://app.netlify.com/sites/jaylooney/deploys)
 
 This is [my personal website](https://jaylooney.dev) and may or may not contain any of my thoughts.
+
+Built /w [zola ssg](https://www.getzola.org/) + [abridge theme](https://github.com/Jieiku/abridge).
