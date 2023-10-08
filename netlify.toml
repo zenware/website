@@ -1,6 +1,10 @@
 [build]
 publish = "public"  # Build Output Directory
-command = "zola build && npm run abridge && zola build"
+command = """
+  GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
+  git submodule update --init --remote && \
+  zola build && npm run abridge && zola build
+"""
 
 [build.environment]
 # Try to keep this to the latest version of zola
