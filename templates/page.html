@@ -36,10 +36,12 @@
   {%- endif %}
 {%- endblock comments_init %}
 
-{% if config.extra.mermaid.enabled %}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
-  <script>if (typeof mermaid !== "undefined") { mermaid.initialize({ startOnLoad: true }) }</script>
-{% endif %}
+{%- block mermaid_init %}
+  {%- if config.extra.mermaid_enabled %}
+    <script src="{% config.extra.mermaid_url %}" integrity="{% config.extra.mermaid_hash %}"></script>
+    <script>mermaid.initialize({ startOnLoad: true })</script>
+  {%- endif %}
+{%- endblock mermaid_init %}
 
 {%- block content %}
     <article>
