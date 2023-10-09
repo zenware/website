@@ -4,8 +4,7 @@ title = "Mechanics of an Assembly Program"
 +++
 # Mechanics of an Assembly Program
 
-<!-- {% mermaid() %} -->
-```mermaid
+{% mermaid() %}
 graph TD
 	subgraph program
 	stack --> heap
@@ -13,8 +12,7 @@ graph TD
 	bss --> data
 	data --> text
 	end
-```
-<!-- {% end %} --> 
+{% end %}
 
 What is the point of Assembly programs anyway? What do they actually do?
 They turn into machine instructions for a particular CPU architecture.
