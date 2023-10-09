@@ -39,7 +39,7 @@
 {%- block mermaid_init %}
   {%- if config.extra.mermaid_enabled %}
   <script src="{{- config.extra.mermaid_url | safe }}" integrity="{{- config.extra.mermaid_hash | safe }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script integrity="sha384-{{ get_hash(literal="mermaid.initialize({ startOnLoad: true })", sha_type=384, base64=true) | safe }}">mermaid.initialize({ startOnLoad: true })</script>
+  <script src="{{ get_url(path="static/js/mermaid_init.js") }}" integrity="sha384-{{ get_hash(path="static/js/mermaid_init.js", sha_type=384, base64=true) | safe }}"></script>
   {%- endif %}
 {%- endblock mermaid_init %}
 
