@@ -38,7 +38,7 @@ Perimeter is no longer the physical location of an enterprise, inside the perime
 4. Externalizing Applications and Workflows
 5. Implementing Inventory-Based Access Control
 
-#### Securely Identifying the Device
+### Securely Identifying the Device
 
 - Device Inventory Database
   - Managed devices are the only devices allowed to access corp apps
@@ -48,7 +48,7 @@ Perimeter is no longer the physical location of an enterprise, inside the perime
   - Device Certificates provisioned to TPM or other "Qualified" Certificate Store
   - Certificate is used for all communication to enterprise services
 
-#### Securely Identifying the User
+### Securely Identifying the User
 
 - User and Group Database
   - Integrated with HR processes to manage Job Categories, Usernames, and Group Membership
@@ -58,7 +58,7 @@ Perimeter is no longer the physical location of an enterprise, inside the perime
   - Validates against User Database and Group Database
   - Generates time limited, resource specific, authorization tokens
 
-#### Remove Trust from the Network
+### Remove Trust from the Network
 
 - Deployment of an Unprivileged Network
   - Intended to replicate an external network
@@ -70,7 +70,7 @@ Perimeter is no longer the physical location of an enterprise, inside the perime
   - Managed devices provide their certificate for the 802.1x Handshake
   - Unmanaged / Unrecognized devices are assigned a remediation network
 
-#### Externalizing Applications and Workflows
+### Externalizing Applications and Workflows
 
 - Internet-Facing Access Proxy
   - All enterprise apps are exposed to clients via an Internet-facing access proxy to enforce encryption
@@ -80,7 +80,7 @@ Perimeter is no longer the physical location of an enterprise, inside the perime
   - All enterprise apps are exposed externally and registered in public DNS
   - CNAME points to the access proxy
 
-#### Implementing Inventory-Based Access Control
+### Implementing Inventory-Based Access Control
 
 - Trust Inference for Devices and Users
   - Access levels will change over time
