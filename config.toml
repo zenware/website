@@ -42,19 +42,20 @@ external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
 
 # Any Extra language you do not use, delete or comment out the extra language sections:
-[languages.fr]
-title = "Jay Looney"
-description = "My journey through Software Engineering."
-generate_feed = true
-build_search_index = true
-search.include_title = true # include title of page/section in index
-search.include_description = true # include description of page/section in index
-search.include_content = true # include rendered content of page/section in index
+# I don't know nearly enough French for this to be useful any time soon.
+#[languages.fr]
+#title = "Jay Looney"
+#description = "My journey through Software Engineering."
+#generate_feed = true
+#build_search_index = true
+#search.include_title = true # include title of page/section in index
+#search.include_description = true # include description of page/section in index
+#search.include_content = true # include rendered content of page/section in index
 # search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
-taxonomies = [
+#taxonomies = [
 #    {name = "categories", feed = true},
-    {name = "tags", feed = true},
-]
+#    {name = "tags", feed = true},
+#]
 
 [languages.es]
 title = "Jay Looney"
@@ -74,8 +75,9 @@ taxonomies = [
 ######
 ### Things from my previous theme, just needed to get articles building again.
 ######
-
 avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=400"
+# The only other 'requirement' is the mermaid.js shortcode implementation.
+# I will have to look through the commit history and see how I enabled that.
 
 ###############################################################################
 ### Layout & Format
@@ -118,16 +120,17 @@ footer_credit = true
 
 ### Uncomment one of the below lines, or neither, depending on which type of logo you want to use:
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
-textlogo = '<font color="#f90">Jay Looney</font>bridge'
+#textlogo = '<font color="#f90">A</font>bridge'
+textlogo = 'Jay Looney'
 #textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="28" height="28"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
 
-sitedesc = false # enables or disables the display of the site description below the logo.
-headhr = false # show or hide horizontal rule below header
+sitedesc = true # enables or disables the display of the site description below the logo.
+headhr = true # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 ### $CURRENT_YEAR and $SITE_TITLE can be used anywhere within the copyright, you can change their position or you can also delete them and type whatever you want instead.
 #copyright = false # set to false to disable the copyright.
-#copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
+copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
 #copyright_override = '© $CURRENT_YEAR $SITE_TITLE • Website content is licensed <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.'
 
 
@@ -237,7 +240,7 @@ webmanifest = "manifest.min.json" # Required for PWAs
 ###  The options below other than pwa=true, only come into play when the npm/node script is ran.
 ###############################################################################
 
-pwa = true # true to load the service worker
+pwa = false # true to load the service worker
 pwa_VER = '3.11.0' # Service Worker cache version. (increment if you need to force a new cache)
 
 ### 3600=1hour, 28800=8hours, 86400=1day, 604800=1week, 1209600=2weeks

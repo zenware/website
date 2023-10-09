@@ -21,18 +21,18 @@
   $ic: true,// true for colorized icons, otherwise #888 is used.
 
   $icon-rss: true,
-  $icon-mail: false,// e-mail
+  $icon-mail: true,// e-mail
   $icon-mastodon: false,
   $icon-element: false,
-  $icon-matrix: false,
+  $icon-matrix: true,
   $icon-buymeacoffee: false,
   $icon-kofi: false,
-  $icon-twitter: false,
+  $icon-twitter: true,
   $icon-facebook: false,
   $icon-linkedin: false,
   $icon-codeberg: false,
   $icon-gitlab: false,
-  $icon-github: false,
+  $icon-github: true,
   $icon-github-sponsor: false,
   $icon-bitbucket: false,
   $icon-python: false,
@@ -40,7 +40,7 @@
   $icon-stack: false,
   $icon-instagram: false,
   $icon-pinterest: false,
-  $icon-discord: false,
+  $icon-discord: true,
   $icon-twitch: false,
   $icon-youtube: false,
   $icon-researchgate: false,
