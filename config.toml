@@ -93,12 +93,13 @@ menu = [
     {url = "categories", name = "Categories", slash = true, blank = false, size="s110"},
     {url = "tags", name = "Tags", slash = true, blank = false, size="s110"},
 ]
-menu_footer = [
-    {url = "about", name = "About", slash = true, blank = false},
-    {url = "contact", name = "Contact", slash = true, blank = false},
-    {url = "privacy", name = "Privacy", slash = true, blank = false},
-    {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true},
-]
+# Don't really need the footer.
+#menu_footer = [
+#    {url = "about", name = "About", slash = true, blank = false},
+#    {url = "contact", name = "Contact", slash = true, blank = false},
+#    {url = "privacy", name = "Privacy", slash = true, blank = false},
+#    {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true},
+#]
 
 toc = true
 recent = true # TOC / index
