@@ -76,7 +76,8 @@ taxonomies = [
 ### Things from my previous theme, just needed to get articles building again.
 ######
 avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=400"
-mermaid_enabled = false
+mermaid_enabled = true
+# Latest version as of 2023-10-09, it is possible to add a specific version to a specific page.
 mermaid_url = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.5.0/mermaid.min.js"
 mermaid_hash = "sha512-8tJiFwaX7ssyuxi5wrre7/LSLg94WKrYZpXUt55ptI5kXbVgmzUH+HRBBMJt+vwoxLS3TMn9uJnlqKk1OWZpCA=="
 
