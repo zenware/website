@@ -36,12 +36,10 @@
   {%- endif %}
 {%- endblock comments_init %}
 
-{%- block mermaid_init %}
-  {%- if config.extra.mermaid_enabled %}
-    <script src="{{config.extra.mermaid_url}}" integrity="{{config.extra.mermaid_hash}}"></script>
-    <script>mermaid.initialize({ startOnLoad: true })</script>
-  {%- endif %}
-{%- endblock mermaid_init %}
+{%- if config.extra.mermaid_enabled %}
+  <script src="{{config.extra.mermaid_url}}" integrity="{{config.extra.mermaid_hash}}"></script>
+  <script>mermaid.initialize({ startOnLoad: true })</script>
+{%- endif %}
 
 {%- block content %}
     <article>

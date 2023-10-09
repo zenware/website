@@ -5,7 +5,7 @@ date = 2023-10-09
 draft = false
 
 [taxonomies]
-tags = ["zerotrust","cybersecurity"]
+tags = ["zerotrust","cybersecurity","BeyondCorp"]
 [extra]
 keywords = "BeyondCorp, Zero Trust, Google, Network Perimiter, Access Controls, Authorization"
 toc = true
@@ -13,6 +13,7 @@ series = "BeyondCorp"
 +++
 
 This article is just notes I took while reading the first BeyondCorp[^beyondcorp] paper.
+
 <!-- more -->
 ## BeyondCorp: A New Approach to Enterprise Security[^beyondcorp1]
 
