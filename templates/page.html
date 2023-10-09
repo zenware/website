@@ -36,6 +36,11 @@
   {%- endif %}
 {%- endblock comments_init %}
 
+{% if config.extra.mermaid.enabled %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  <script>if (typeof mermaid !== "undefined") { mermaid.initialize({ startOnLoad: true }) }</script>
+{% endif %}
+
 {%- block content %}
     <article>
     {{- macros::title_post(page=page, config=config) }}
