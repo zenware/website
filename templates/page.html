@@ -38,8 +38,8 @@
 
 {%- block mermaid_init %}
   {%- if config.extra.mermaid_enabled %}
-    <script defer src="{{- config.extra.mermaid_url | safe }}" integrity="{{- config.extra.mermaid_hash | safe }}"></script>
-    <script defer>mermaid.initialize({ startOnLoad: true })</script>
+    <script defer src="{{- config.extra.mermaid_url | safe }}" integrity="{{- config.extra.mermaid_hash | safe }}" crossorigin="anonymous"></script>
+    <script defer integrity="sha384-{{ get_hash(literal="mermaid.initialize({ startOnLoad: true })", sha_type=384, base64=true) | safe }}">mermaid.initialize({ startOnLoad: true })</script>
   {%- endif %}
 {%- endblock mermaid_init %}
 
