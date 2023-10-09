@@ -1,8 +1,10 @@
 +++
 date = "2022-02-20"
 title = "Mechanics of an Assembly Program"
+
+[extra]
+mermaid_enabled = true
 +++
-# Mechanics of an Assembly Program
 
 {% mermaid() %}
 graph TD
