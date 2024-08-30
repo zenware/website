@@ -1,4 +1,3 @@
-# https://www.getzola.org/documentation/getting-started/configuration/
 # do NOT include a trailing slash on the base URL
 base_url = "https://www.jaylooney.dev"
 # Usable site directly from disk, Including Search: "/home/jieiku/.dev/abridge/public"
@@ -6,16 +5,16 @@ base_url = "https://www.jaylooney.dev"
 # If you use the npm/node script then all you have to do is set offline = true, and everything else is automatic.
 
 title = "Jay Looney"
-description = "My journey through Software Engineering."
+description = "My journey through Software Engineering."#for SEO aim for 140-180 Characters
 theme = "abridge"
 
 default_language = "en"
 compile_sass = true
 minify_html = false
 build_search_index = true
-generate_feed = true
+generate_feeds = true
 taxonomies = [
-    {name = "categories", feed = true},
+#    {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
 
@@ -25,7 +24,7 @@ taxonomies = [
 #hard_link_static = false # set to true to hard link instead of copying, useful for very large files.
 
 [search]                # Options specific to elasticlunr search.
-# index format can be: elasticlunr_json or elasticlunr_javascript
+# index format can be: elasticlunr_json or elasticlunr_javascript or fuse_json
 index_format = "elasticlunr_json"
 include_title = true        # include title of page/section in index
 include_description = true # include description of page/section in index
@@ -35,52 +34,30 @@ include_content = true      # include rendered content of page/section in index
 [markdown]
 highlight_code = true
 highlight_theme = "css"
+bottom_footnotes = true # adds footnote backreference
 render_emoji = false
 external_links_target_blank = true # rel="noopener"
 external_links_no_follow = false   # rel="nofollow"
 external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
 
-# Any Extra language you do not use, delete or comment out the extra language sections:
-# I don't know nearly enough French for this to be useful any time soon.
-#[languages.fr]
-#title = "Jay Looney"
-#description = "My journey through Software Engineering."
-#generate_feed = true
-#build_search_index = true
-#search.include_title = true # include title of page/section in index
-#search.include_description = true # include description of page/section in index
-#search.include_content = true # include rendered content of page/section in index
-# search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
-#taxonomies = [
-#    {name = "categories", feed = true},
-#    {name = "tags", feed = true},
-#]
-
-[languages.es]
-title = "Jay Looney"
-description = "My journey through Software Engineering."
-generate_feed = true
-build_search_index = true
-search.include_title = true # include title of page/section in index
-search.include_description = true # include description of page/section in index
-search.include_content = true # include rendered content of page/section in index
-# search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
-taxonomies = [
-#    {name = "categories", feed = true},
-    {name = "tags", feed = true},
-]
+# [languages.es]
+# title = "Abridge"
+# description = "Abridge es un tema de Zola rápido y liviano que utiliza HTML semántico, CSS ligero de clase abridge.css y JS no obligatorio."
+# generate_feeds = true
+# build_search_index = true
+# search.include_title = true # include title of page/section in index
+# search.include_description = true # include description of page/section in index
+# search.include_content = true # include rendered content of page/section in index
+# # search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
+# taxonomies = [
+# #    {name = "categories", feed = true},
+#     {name = "tags", feed = true},
+# ]
 
 [extra]
-######
-### Things from my previous theme, just needed to get articles building again.
-######
-avatar_url = "https://secure.gravatar.com/avatar/8f24693876231b5fa537a31394b940ff?s=400"
-mermaid_enabled = true
-# Latest version as of 2023-10-09, it is possible to add a specific version to a specific page.
-mermaid_url = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.5.0/mermaid.min.js"
-mermaid_hash = "sha512-8tJiFwaX7ssyuxi5wrre7/LSLg94WKrYZpXUt55ptI5kXbVgmzUH+HRBBMJt+vwoxLS3TMn9uJnlqKk1OWZpCA=="
-
+###############################################################################
+### Layout & Format
 ### position: top, bottom, both, false(hidden)
 ### size: s150, s140, s130, s120, s110, s95, s90, s85, s80, s75, s70, false(full size)
 ### divider:    " "        "&middot;"        "&bull;"
@@ -94,13 +71,12 @@ menu = [
     {url = "tags", name = "Tags", slash = true, blank = false, size="s110"},
     {url = "notes", name = "Notes", slash = true, blank = false, size="s110"},
 ]
-# Don't really need the footer.
-#menu_footer = [
-#    {url = "about", name = "About", slash = true, blank = false},
-#    {url = "contact", name = "Contact", slash = true, blank = false},
-#    {url = "privacy", name = "Privacy", slash = true, blank = false},
-#    {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true},
-#]
+menu_footer = [
+    {url = "about", name = "About", slash = true, blank = false, size="s90"},
+    {url = "contact", name = "Contact", slash = true, blank = false, size="s90"},
+    {url = "privacy", name = "Privacy", slash = true, blank = false, size="s90"},
+    {url = "sitemap.xml", name = "Sitemap", slash = false, blank = true, size="s90"},
+]
 
 toc = true
 recent = true # TOC / index
@@ -109,13 +85,15 @@ series = true
 series_items = 9 # Max number of items to display in series list, use 0 to disable
 #Series_parts = "$NUMBER_OF_PARTS part Series"
 
-meta_index = { position="bottom", size="s90", author=false, readtime=true, readstring="min", date=true, updated=false, categories_tags=true, divider=" " }
-meta_post = { position="top", size="s95", author=true, readtime=true, readstring="min read", date=true, updated=true, categories_tags=true, divider=" " }
+#arrow_pagination = true # If set to true then the pagination will use the old arrows mode, be sure to also enable the icons.
+
+meta_index = { position="bottom", size="s90", author=false, readtime=false, readstring="min", date=true, updated=false, categories_tags=true, divider="" }
+meta_post = { position="top", size="s95", author=true, readtime=false, readstring="min read", date=true, updated=true, categories_tags=true, divider="" }
 
 hide_section_dates = false # hides the date for sections that use posts.html as their template.
 hide_page_nextprev_titles = false # hides the next/previous titles for pages that use page.html as their template.
 title_size_index = "s85"
-footer_size = "s90"
+footer_size = "s80" # the size of the copyright and powered by text
 footer_credit = true
 #footer_credit_override = '<p class="s90">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> &#38; <a href="https://github.com/Jieiku/abridge/" target="_blank">Abridge</a></p>'
 #archive_reverse = true # Set to True to sort posts chronologically per year instead of newest first on the archive page: example.com/archive/
@@ -127,8 +105,8 @@ textlogo = 'Jay Looney'
 #textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="28" height="28"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
 
 sitedesc = false # enables or disables the display of the site description below the logo.
-headhr = true # show or hide horizontal rule below header
-foothr = true # show or hide horizontal rule above footer
+headhr = false # show or hide horizontal rule below header
+foothr = false # show or hide horizontal rule above footer
 
 ### $CURRENT_YEAR and $SITE_TITLE can be used anywhere within the copyright, you can change their position or you can also delete them and type whatever you want instead.
 #copyright = false # set to false to disable the copyright.
@@ -143,7 +121,7 @@ copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
 ###############################################################################
 
 title_separator = "|"  # Separator between title and title_addition, set as |, -, _, etc
-title_addition = "Blog" # a default value for title addition
+title_addition = "Blog" # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
 author = "Jay Looney" # Put Your Name here
 keywords = "blog, kubernetes, k8s, cloud, rust, python" # used for the primary site index
 #banner = "banner.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
@@ -153,44 +131,40 @@ twitter_meta = "jaymlooney" # for SEO: twitter:site and twitter:creator
 seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
 #dev = false # development mode, if true then robots.txt should prevent search indexing.
 
+#head_extra = '<meta name="analytics" content="my-analytics-id" /><meta name="advertising" content="my-advertising-id" />'
+
 
 ###############################################################################
 ### Footer social links; these are used in macros/social.html
 ###   https://github.com/Jieiku/abridge/blob/master/templates/macros/social.html
 ###############################################################################
 
-feed = true # this adds the RSS feed icon in the footer.
+# feed = true # this adds the RSS feed icon in the footer.
 mail = "jay.m.looney@gmail.com"
-#mastodon = "@your-user-name"
-element = "@zenware:matrix.org"
+# mastodon = "https://mastodon.example.com/@username"
+# element = "matrix.example.com"
 #buymeacoffee = "your-user-name"
-#kofi = "your-user-name"
-discord = "zenware" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
+# kofi = "your-user-name"
+# discord = "zenware" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
 twitter = "jaymlooney"
 #facebook = "your-user-name"
 #linkedin = "your-user-name"
 #gitlab = "your-user-name"
 github = "zenware"
 #codeberg = "your-user-name" # Everything after https://codeberg.org/   eg: username  *or*  username/repository
-github_sponsor = "zenware"
+#github_sponsor = "zenware"
 #bitbucket = "your-user-name"
 #python = "your-user-name"
 #docker = "your-user-name"
 #stack = "your-user-name"
-#instagram = "your-user-name"
+# instagram = "your-user-name"
+#pixelfed = "https://pixelfed.example.com/" # Heaviest icon, off by default
 #pinterest = "your-user-name"
-#twitch = "your-user-name"
-#youtube = "channel/your-channel-id"
+# twitch = "your-user-name"
+# youtube = "channel/your-channel-id"
+#peertube = "https://peertube.example.com/@username"
 #researchgate = "your-profile-id"
-
-
-###############################################################################
-### Commenting System for visitors to leave comments on pages.
-###   hyvor talk
-###############################################################################
-
-#comments.hyvor = "9366" # hyvor website id, comment out to disable.
-#comments.hyvorcolor = "os" # set the color property for hyvor
+#telegram = "your-user-name"
 
 
 ###############################################################################
@@ -198,24 +172,17 @@ github_sponsor = "zenware"
 ### You can load extra css files if you need to, just separate by comma:
 ### stylesheets = [ "abridge.css", "extra.css" ]
 ### search_library, library to use. valid values:
-###   false, "elasticlunr", "tinysearch", "stork"
-### offline: implies uglyurls=true and integrity=false, when true NPM/node will
-###   automatically set the path for the base_url, it will build the site,
-###   then set the base_url back to what it was. This is a way to build a completely
-###   offline site, a feature not possible with Zola alone.
-###   The PWA feature is another way to build an offline site, so there are now two
-###   different ways to build an offline site with Abridge.
+###   false, "elasticlunr", "elasticlunrjava", "pagefind", "tinysearch", "offline"
+###     elasticlunr - elasticlunr using the elasticlunr_json index format
+###     elasticlunrjava - elasticlunr using the elasticlunr_javascript index format
+###     pagefind - pagefind using the fuse_json index format
+###     tinysearch - tinysearch using the fuse_json index format
+###     offline - elasticlunr using the elasticlunr_javascript index format with content paths relative to the location on disk.
+###       (offline: implies uglyurls=true and integrity=false, node script will pass base_url argument as the path on disk.)
 ###
-### For most people the value of online_url will be the same as base_url.
-###   online_url is used to restore the base_url after generating an Offline site.
-###   When you set offline = true and run the npm script, the base_url is set to the absolute path on disk.
-###   Once you set offline = false, the base_url will be set back to the value of online_url when you run the npm script again.
+###       The PWA feature is another way to build an offline site, so there are now two
+###       different ways to build an offline site with Abridge.
 ###############################################################################
-
-# do NOT include a trailing slash on the online URL
-online_url = "https://www.jaylooney.dev"
-online_indexformat = "elasticlunr_json"# used to restore your preferred index format when offline = false
-offline = false # implies uglyurls=true and integrity=false, when true NPM/node will automatically set the path for the base_url, it will build the site, then set the base_url back to what it was.
 
 uglyurls = false # if set to true then links are generated with the full path. eg https://abridge.netlify.app/index.html
 integrity = true # increases site security, should normally be true. (setting to false is useful during js development)
@@ -227,10 +194,11 @@ js_prestyle = true # used to preload: FontAwesome, Katex, external Google Fonts
 js_switcher = true # The button that allows manually changing between light/dark mode.
 js_switcher_default = "dark" # default nojs switcher mode: dark, light (make sure to also set $switcherDefault in abridge.scss)
 
-search_library = 'elasticlunr'
+search_library = "elasticlunr"
 stylesheets = ["abridge.css"]
 
 webmanifest = "manifest.min.json" # Required for PWAs
+
 
 ###############################################################################
 ### PWA (Progressive Web Application)
@@ -243,7 +211,7 @@ webmanifest = "manifest.min.json" # Required for PWAs
 ###############################################################################
 
 pwa = false # true to load the service worker
-pwa_VER = '3.11.0' # Service Worker cache version. (increment if you need to force a new cache)
+pwa_VER = '3.12.1' # Service Worker cache version. (increment if you need to force a new cache)
 
 ### 3600=1hour, 28800=8hours, 86400=1day, 604800=1week, 1209600=2weeks
 pwa_NORM_TTL = 0 #  86400 is reasonable. html, json, xml, anything else undefined
@@ -264,6 +232,7 @@ pwa_cache_all = true
 ### List of Files for the PWA to initially Cache, used if pwa_cache_all = false
 pwa_BASE_CACHE_FILES = "'/js/theme.min.js','/js/theme_light.min.js','/abridge.css','/js/abridge.min.js','/','/404.html','/offline/','/manifest.min.json'"
 
+
 ###############################################################################
 ### Favicons, comment out a line to disable loading some or all of these if needed.
 ###############################################################################
@@ -279,14 +248,24 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 
 ###############################################################################
+### Commenting System for visitors to leave comments on pages.
+###   hyvor talk
+###############################################################################
+
+#comments.hyvor = "9366" # hyvor website id, comment out to disable.
+#comments.hyvorcolor = "os" # set the color property for hyvor
+
+
+###############################################################################
 ### Icons
 ### Loading the entire fontawesome icon collection will negatively impact your sites performance.
-### For a lightweight solution consider adding only the icons that you need to the following file:
-### https://github.com/Jieiku/abridge/blob/master/sass/include/_icons.scss
+### For a lightweight solution consider adding only the icons that you need.
+### you can load individual scss based svg icons by including them in the _extra.scss file
+### https://github.com/Jieiku/abridge/blob/master/COPY-TO-ROOT-SASS/_extra.scss
 ###############################################################################
 
 ### To disable any of these icons set them to "false" (will default to unicode icons instead)
-#icon_search = "svgs search" # Search button in search box.
+#icon_search = "svgs svgm search" # Search button in search box.
 #icon_adjust = "svgs adjust" # Theme Switcher button in top menu. (add class svgh to change colors on hover)
 #icon_first = "svgs svgh angll" # Pagination First Page.
 #icon_prev = "svgs svgh angl" # Pagination Previous Page.
@@ -318,9 +297,9 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 ### UnComment any of these lines to enable their meta tags.
 ###############################################################################
 
-#security_header_referrer = "strict-origin-when-cross-origin"
+security_header_referrer = "strict-origin-when-cross-origin"
 
-#security_header_csp = "default-src 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; connect-src 'self'; form-action 'self'; script-src 'self'; img-src 'self' data: cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.gstatic.com; style-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com;"
+security_header_csp = "default-src 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; connect-src 'self'; form-action 'self'; script-src 'self'; img-src 'self' data: cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.gstatic.com; style-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com;"
 
 
 ###############################################################################
