@@ -158,7 +158,7 @@ commands =
 ```
 
 ### Coverage.py
-[Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/) is a code coverage tool,
+[Coverage.py](https://coverage.readthedocs.io/en/latest/) is a code coverage tool,
 it measures code coverage with runtime analysis. It produces reports that look like this
 
 ```sh
