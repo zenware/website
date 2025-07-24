@@ -12,8 +12,6 @@ toc = true
 series = "BookNotes"
 +++
 
-Quick Hit Insights from a Great Book.
-<!-- more -->
 * Thinking inside out (starting with why), not outside in (starting with what.) Communicate the *why* as it fosters a sense of belonging.
 * The goal is to do business with people who believe what you believe.
 * People don't buy *what* you do, they buy *why* you do it. What you do simply proves what you believe.

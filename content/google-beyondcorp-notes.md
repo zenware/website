@@ -12,7 +12,7 @@ toc = true
 series = "BeyondCorp"
 +++
 
-This article is just notes I took while reading the first BeyondCorp[^beyondcorp] paper.
+This is the notes I took while reading the first BeyondCorp[^beyondcorp] paper.
 
 <!-- more -->
 ## BeyondCorp: A New Approach to Enterprise Security[^beyondcorp1]

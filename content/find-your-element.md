@@ -1,6 +1,6 @@
 +++
 title = "Find Your Element by Ken Robinson"
-description = "Sample article showcasing syntax highlighting and formatting for Code Blocks with a custom theme."
+description = "Notes on the book Find your Element by Ken Robinson"
 date = 2023-10-09
 draft = false
 
@@ -12,8 +12,6 @@ toc = true
 series = "BookNotes"
 +++
 
-Quick Hit Insights from a Great Book.
-<!-- more -->
 * Expose yourself to as many new opportunities as possible to discover your unrealized aptitudes.
 * Strive to have a growth mindset. It will allow you to develop and improve your abilities.
 * Find your passions, things you do without noticing the passage of time.

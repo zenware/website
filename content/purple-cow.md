@@ -1,6 +1,6 @@
 +++
 title = "Purple Cow by Seth Godin"
-description = "Notes I too while reading Purple Cow by Seth Godin"
+description = "Notes I took while reading Purple Cow by Seth Godin"
 date = 2023-10-09
 draft = false
 
@@ -12,8 +12,6 @@ toc = true
 series = "BookNotes"
 +++
 
-Quick Hit Insights from a Great Book.
-<!-- more -->
 * Take risks at being remarkable, and don't worry about criticism.
 * Target the people who are both willing to try new things and very vocal at spreading the word to others.
 * Invent the product with marketing.
