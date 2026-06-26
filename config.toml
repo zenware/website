@@ -5,7 +5,7 @@ base_url = "https://www.jaylooney.dev"
 # If you use the npm/node script then all you have to do is set offline = true, and everything else is automatic.
 
 title = "Jay Looney"
-description = "My journey through Software Engineering."#for SEO aim for 140-180 Characters
+description = "Jay Looney — software engineer building reliable systems across data, infrastructure & security. ~5 years in ICS/OT (Verve, Dragos). Open to roles, consulting & advisory."#for SEO aim for 140-180 Characters
 theme = "abridge"
 
 default_language = "en"
@@ -121,9 +121,9 @@ copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
 ###############################################################################
 
 title_separator = "|"  # Separator between title and title_addition, set as |, -, _, etc
-title_addition = "Blog" # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
+title_addition = "Software Engineer" # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
 author = "Jay Looney" # Put Your Name here
-keywords = "blog, kubernetes, k8s, cloud, rust, python" # used for the primary site index
+keywords = "Jay Looney, software engineer, data engineering, infrastructure, ICS, OT, cybersecurity, critical infrastructure, Python, Linux, PostgreSQL, Elasticsearch, CI/CD, Madison WI, remote" # used for the primary site index
 #banner = "banner.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
 twitter_meta = "jaymlooney" # for SEO: twitter:site and twitter:creator
 #google = "Your Google Site verification code."
@@ -132,6 +132,9 @@ seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twit
 #dev = false # development mode, if true then robots.txt should prevent search indexing.
 
 #head_extra = '<meta name="analytics" content="my-analytics-id" /><meta name="advertising" content="my-advertising-id" />'
+
+# JSON-LD structured data: tells search engines this is one person across all profiles (sameAs).
+head_extra = '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jay Looney","alternateName":["Jay Michael Looney","zenware"],"url":"https://www.jaylooney.dev","email":"mailto:jay@jaylooney.dev","jobTitle":"Software Engineer","description":"Software engineer building reliable systems across data, infrastructure and security. ~5 years in ICS/OT cybersecurity.","address":{"@type":"PostalAddress","addressLocality":"Madison","addressRegion":"WI","addressCountry":"US"},"knowsAbout":["Software Engineering","Data Engineering","Infrastructure","ICS/OT Cybersecurity","Critical Infrastructure","Python","Linux","PostgreSQL","Elasticsearch","CI/CD"],"sameAs":["https://github.com/zenware","https://www.linkedin.com/in/jaylooney/","https://x.com/jaymlooney","https://www.youtube.com/@JayLooney","https://www.instagram.com/jaymlooney/","https://www.reddit.com/user/zenware","https://stackoverflow.com/users/story/zenware","https://about.me/jaylooney"]}</script>'''
 
 
 ###############################################################################
@@ -148,7 +151,7 @@ mail = "jay.m.looney@gmail.com"
 # discord = "zenware" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
 twitter = "jaymlooney"
 #facebook = "your-user-name"
-#linkedin = "your-user-name"
+linkedin = "jaylooney"
 #gitlab = "your-user-name"
 github = "zenware"
 #codeberg = "your-user-name" # Everything after https://codeberg.org/   eg: username  *or*  username/repository
