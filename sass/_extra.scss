@@ -1,3 +1,14 @@
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
+
+/* Homepage hero (rendered by the site's templates/index.html override) is a
+   direct child of <main>, which the theme lays out as a flex row. Give the
+   hero the full row so the post list wraps below instead of being shunted
+   to the right of the hero. */
+main {
+  flex-wrap: wrap;
+}
+main > section.hero {
+  flex-basis: 100%;
+}
