@@ -18,24 +18,7 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "zola-pin": "zola-pin"
-      }
-    },
-    "zola-pin": {
-      "locked": {
-        "lastModified": 1762041495,
-        "narHash": "sha256-Bwni7us6KosEnQ4io/Ae1NvWzsho1DiAXFJs35AXGWM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9109f5749810173c08090a62f2a1d418f945ca36",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9109f5749810173c08090a62f2a1d418f945ca36",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

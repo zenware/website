@@ -16,3 +16,10 @@ static/js/pagefind-*.css
 static/js/pagefind.*.pf_meta
 static/js/index
 static/js/fragment
+
+# macOS
+.DS_Store
+# Hugo leftover lock from an abandoned build path
+.hugo_build.lock
+# Zola 0.22+ generates per-theme highlighting css into static/ during build
+static/giallo*.css
