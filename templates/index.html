@@ -75,6 +75,11 @@ Everything else mirrors themes/abridge/templates/index.html.
     {%- else %}
     {{- macros::numpagination(paginator=paginator, config=config) }}
     {%- endif %}
+    {%- if section.extra.cta %}
+    <div class="hero-cta">
+      {{ section.extra.cta | markdown(inline=true) | safe }}
+    </div>
+    {%- endif %}
     </div>
   {%- if config.extra.recent | default(value=true) %}
     {#- The following line is checking if the template is being used for the root or a section #}

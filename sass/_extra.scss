@@ -5,10 +5,18 @@
 /* Homepage hero (rendered by the site's templates/index.html override) is a
    direct child of <main>, which the theme lays out as a flex row. Give the
    hero the full row so the post list wraps below instead of being shunted
-   to the right of the hero. */
+   to the right of the hero. Also neutralize the theme's generic
+   section{display:flex} so the hero's heading/paragraphs stack vertically. */
 main {
   flex-wrap: wrap;
 }
 main > section.hero {
   flex-basis: 100%;
+  display: block;
+}
+/* "Currently open to..." CTA rendered below the pagination */
+.hero-cta {
+  margin-top: var(--s2);
+  padding-top: var(--s1);
+  border-top: 1px solid var(--c4);
 }
