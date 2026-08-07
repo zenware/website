@@ -2,42 +2,6 @@
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
 
-/* Homepage layout.
-
-   The abridge theme makes main a flex row and applies flex sizing broadly
-   to every main div/article. That is fine for the original index template
-   (posts div + Recent sidebar), but it cannot safely accommodate the site's
-   full-width hero: flex-basis:100% is still shrinkable and leaves the post
-   column at 0px wide. Use an explicit grid for the three direct children. */
-main {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 15rem;
-  column-gap: var(--s1);
-  align-items: start;
-}
-main > section.hero {
-  grid-column: 1 / -1;
-  display: block;
-}
-main > div:not(.sblock) {
-  grid-column: 1;
-  min-width: 0;
-}
-main > div.sblock {
-  grid-column: 2;
-  grid-row: 2;
-  width: 15rem;
-  max-width: 15rem;
-  margin-left: 0;
-}
-@media (max-width: 767px) {
-  main {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  main > div.sblock {
-    display: none;
-  }
-}
 /* "Currently open to..." CTA rendered below the pagination */
 .hero-cta {
   margin-top: var(--s2);
