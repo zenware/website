@@ -57,3 +57,6 @@ head_extra = '''<script type="application/ld+json">{"@context":"https://schema.o
 # Math (KaTeX) and diagrams (Mermaid) are opt-in per page and self-hosted:
 #   [extra] math = true      -> $inline$ and $$display$$ TeX
 #   [extra] mermaid = true   -> ```mermaid fenced code blocks
+[link_checker]
+# notashelf.dev answers automated requests with 418 (bot protection); it loads fine in a browser.
+skip_prefixes = ["https://notashelf.dev"]
