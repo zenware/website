@@ -3,15 +3,19 @@ date = "2022-02-20"
 title = "Mechanics of an Assembly Program"
 +++
 
-{% mermaid() %}
-graph TD
-	subgraph program
-	stack --> heap
-	heap --> bss
-	bss --> data
-	data --> text
-	end
-{% end %}
+```text
+┌─ program ─┐
+│   stack   │
+│     ↓     │
+│   heap    │
+│     ↓     │
+│   .bss    │
+│     ↓     │
+│   .data   │
+│     ↓     │
+│   .text   │
+└───────────┘
+```
 
 What is the point of Assembly programs anyway? What do they actually do?
 They turn into machine instructions for a particular CPU architecture.

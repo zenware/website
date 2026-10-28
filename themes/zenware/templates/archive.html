@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ section.title | default(value="Posts") }}</h1>
+{% set root = get_section(path="_index.md") %}
+{% for year, pages in root.pages | group_by(attribute="year") %}
+<h2>{{ year }}</h2>
+{{ m::list(pages=pages) }}
+{% endfor %}
+{% endblock content %}

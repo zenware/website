@@ -1,0 +1,7 @@
+{% macro list(pages) %}
+<ul class="posts">
+{% for p in pages %}
+  <li><a href="{{ p.permalink | safe }}">{{ p.title }}</a>{% if p.date %} <span class="meta">· <time datetime="{{ p.date }}">{{ p.date | date(format="%b %e, %Y") }}</time></span>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endmacro list %}

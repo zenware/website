@@ -1,0 +1,123 @@
+// zenware — as simple as it can possibly be, just complex enough to work.
+// Every number here is justified in README.md → "Design decisions".
+// Colors are checked by scripts/check-contrast.py (it parses this file).
+
+// ---- palette (light) ------------------------------------------------------
+:root {
+  color-scheme: light dark;
+  --bg: #fdfdfc;
+  --fg: #1c1c1f;
+  --muted: #4f515a;
+  --rule: #ccd0da;
+  --link: #1a4fbf;
+  --visited: #953253;  // Baker-Miller pink hue, deepened to pass contrast
+  // code: Catppuccin Latte, token hues darkened just enough for >= 4.5:1
+  --code-bg: #eff1f5;
+  --code-fg: #4c4f69;
+  --t-com: #5f6275;
+  --t-punct: #5f6275;
+  --t-kw: #7a2ed6;
+  --t-str: #2d6e1e;
+  --t-num: #a8420a;
+  --t-fn: #1a56d4;
+  --t-type: #8a5612;
+  --t-op: #11706f;
+  --t-param: #b3303f;
+  --t-red: #c00e35;
+
+  --sans: system-ui, sans-serif;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+
+// ---- palette (dark): Catppuccin Mocha everywhere ---------------------------
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e2e;
+    --fg: #e4e7f5;
+    --muted: #cdd3ea;
+    --rule: #45475a;
+    --link: #b9d3fd;
+    --visited: #ffbfd1;  // Baker-Miller pink, lightened to pass APCA
+    --code-bg: #181825;
+    --code-fg: #cdd6f4;
+    --t-com: #9399b2;
+    --t-punct: #9399b2;
+    --t-kw: #cba6f7;
+    --t-str: #a6e3a1;
+    --t-num: #fab387;
+    --t-fn: #89b4fa;
+    --t-type: #f9e2af;
+    --t-op: #94e2d5;
+    --t-param: #eba0ac;
+    --t-red: #f38ba8;
+  }
+}
+
+// ---- the whole layout ------------------------------------------------------
+html {
+  font: 112.5%/1.5 var(--sans); // 18px at the browser default, still scales with user settings
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-text-size-adjust: 100%;
+}
+body { max-width: 62ch; margin: 0 auto; padding: 1rem 1.25rem 3rem; overflow-wrap: break-word; }
+
+h1, h2, h3, h4, .site { font-family: var(--serif); }
+h1, h2, h3, h4 { line-height: 1.2; margin: 2em 0 .5em; text-wrap: balance; }
+h1 { font-size: 1.75em; margin-top: 1em; }
+h2 { font-size: 1.375em; }
+h3 { font-size: 1.125em; }
+
+a { color: var(--link); text-underline-offset: .15em; }
+a:visited { color: var(--visited); }
+header a:visited, footer a:visited { color: var(--link); } // site chrome isn't "read"
+a:hover { text-decoration-thickness: .125em; }
+
+img, video, svg { max-width: 100%; height: auto; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+blockquote { margin: 1.5em 0; padding-left: 1em; border-left: .25em solid var(--rule); }
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: .25em .5em; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+
+// ---- code ------------------------------------------------------------------
+code, kbd, samp { font-family: var(--mono); font-size: .875em; }
+:not(pre) > code { background: var(--code-bg); padding: .1em .3em; border-radius: .2em; }
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.45;
+  tab-size: 4;
+  border-radius: .25em;
+}
+
+// Syntax tokens (Zola/giallo z-* classes). Order matters: later rules win ties,
+// so the quote marks of a string are string-colored and `//` is comment-colored.
+.z-punctuation { color: var(--t-punct); }
+.z-keyword, .z-storage { color: var(--t-kw); }
+.z-keyword.z-operator { color: var(--t-op); }
+.z-constant { color: var(--t-num); }
+.z-entity.z-name.z-function, .z-support.z-function, .z-variable.z-function, .z-entity.z-name.z-tag { color: var(--t-fn); }
+.z-entity.z-name.z-type, .z-entity.z-name.z-class, .z-support.z-type, .z-support.z-class, .z-entity.z-other.z-attribute-name { color: var(--t-type); }
+.z-variable.z-parameter { color: var(--t-param); }
+.z-variable.z-language, .z-support.z-constant, .z-markup.z-deleted { color: var(--t-red); }
+.z-string, .z-markup.z-inserted { color: var(--t-str); }
+.z-comment { color: var(--t-com); font-style: italic; }
+.z-markup.z-heading, .z-markup.z-bold { font-weight: bold; }
+.z-markup.z-italic { font-style: italic; }
+
+// ---- site chrome -----------------------------------------------------------
+header, footer { color: var(--muted); }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 1.5em; }
+.site { margin: 0; font-size: 1em; font-weight: bold; }
+nav ul, footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .25em 1em; }
+footer { margin-top: 4em; border-top: 1px solid var(--rule); font-size: .9em; }
+.meta { color: var(--muted); font-size: .9em; margin-top: 0; }
+.posts { list-style: none; padding: 0; }
+.posts li { margin-bottom: .5em; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

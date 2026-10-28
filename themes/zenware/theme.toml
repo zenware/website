@@ -1,0 +1,5 @@
+name = "zenware"
+description = "Theme that does what I want."
+license = "MIT"
+homepage = "https://www.jaylooney.dev"
+min_version = "0.22.0"

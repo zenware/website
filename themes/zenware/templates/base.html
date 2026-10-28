@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{%- if page and page.title %}{% set title = page.title ~ " | " ~ config.title -%}
+{%- elif term %}{% set title = "#" ~ term.name ~ " | " ~ config.title -%}
+{%- elif section and section.title %}{% set title = section.title ~ " | " ~ config.title -%}
+{%- else %}{% set title = config.title ~ " | " ~ config.extra.title_addition | default(value="") -%}{% endif -%}
+{%- if page and page.description %}{% set desc = page.description -%}
+{%- elif section and section.description %}{% set desc = section.description -%}
+{%- else %}{% set desc = config.description %}{% endif -%}
+{%- set url = current_url | default(value=config.base_url) -%}
+{%- set path = current_path | default(value="") -%}
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title | trim_end_matches(pat=" | ") }}</title>
+<meta name="description" content="{{ desc }}">
+<meta name="color-scheme" content="light dark">
+{% if current_url %}<link rel="canonical" href="{{ current_url | safe }}">{% endif %}
+<meta property="og:type" content="{% if page %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | default(value=config.title) }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ url | safe }}">
+<link rel="icon" href="{{ get_url(path="favicon.ico") | safe }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ get_url(path="favicon/apple-touch-icon.png") | safe }}">
+{% if config.generate_feeds %}<link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) | safe }}">{% endif %}
+<link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) | safe }}">
+{%- if page.extra.math %}
+<link rel="stylesheet" href="{{ get_url(path="vendor/katex/katex.min.css") | safe }}">
+<script defer src="{{ get_url(path="vendor/katex/katex.min.js") | safe }}"></script>
+<script defer src="{{ get_url(path="vendor/katex/auto-render.min.js") | safe }}"></script>
+<script defer src="{{ get_url(path="js/math.js", cachebust=true) | safe }}"></script>
+{%- endif %}
+{%- if page.extra.mermaid %}
+<script defer src="{{ get_url(path="vendor/mermaid/mermaid.min.js") | safe }}"></script>
+<script defer src="{{ get_url(path="js/mermaid.js", cachebust=true) | safe }}"></script>
+{%- endif %}
+{% block head %}{% endblock head %}
+{{ config.extra.head_extra | default(value="") | safe }}
+</head>
+<body>
+<header>
+  {% if path == "/" %}<h1 class="site">{% else %}<p class="site">{% endif %}<a href="{{ get_url(path="/") | safe }}">{{ config.title }}</a>{% if path == "/" %}</h1>{% else %}</p>{% endif %}
+  {% if config.extra.menu %}<nav aria-label="Main"><ul>
+    {% for item in config.extra.menu %}{% if item.url is ending_with("/") %}{% set href = get_url(path=item.url, trailing_slash=true) %}{% else %}{% set href = get_url(path=item.url) %}{% endif %}
+    <li><a href="{{ href | safe }}"{% if url is starting_with(href) %} aria-current="page"{% endif %}>{{ item.name }}</a></li>
+    {% endfor %}
+  </ul></nav>{% endif %}
+</header>
+<main>
+{% block content %}{% endblock content %}
+</main>
+<footer>
+  <ul>
+    {% for item in config.extra.menu_footer | default(value=[]) %}<li><a href="{{ get_url(path=item.url, trailing_slash=item.url is ending_with("/")) | safe }}">{{ item.name }}</a></li>{% endfor %}
+    {% if config.generate_feeds %}<li><a href="{{ get_url(path="atom.xml", trailing_slash=false) | safe }}">Feed</a></li>{% endif %}
+    {% if config.extra.mail %}<li><a href="mailto:{{ config.extra.mail }}">Email</a></li>{% endif %}
+    {% if config.extra.github %}<li><a href="https://github.com/{{ config.extra.github }}" rel="me">GitHub</a></li>{% endif %}
+    {% if config.extra.linkedin %}<li><a href="https://www.linkedin.com/in/{{ config.extra.linkedin }}" rel="me">LinkedIn</a></li>{% endif %}
+    {% if config.extra.twitter %}<li><a href="https://x.com/{{ config.extra.twitter }}" rel="me">X</a></li>{% endif %}
+  </ul>
+  <p>© {{ now() | date(format="%Y") }} {{ config.extra.author | default(value=config.title) }}</p>
+</footer>
+</body>
+</html>

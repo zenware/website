@@ -1,14 +1,22 @@
-# This _headers file is used to set headers on cloudflare pages: https://developers.cloudflare.com/pages/configuration/headers/
-# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy (disabled everything except autoplay, local-fonts, screen-wake-lock, speaker-selection)
-# opt out of Federated Learning of Cohorts (aka "FLoC") - https://amifloced.org/
+# Cloudflare Pages headers: https://developers.cloudflare.com/pages/configuration/headers/
+# Checked against https://developer.mozilla.org/en-US/observatory
+# Permissions-Policy turns off every browser feature this static site doesn't use.
+# CSP: no inline scripts or styles anywhere. 'self' plus the absolute base_url, so *.pages.dev previews still work.
+# Cloudflare Web Analytics (cloudflareinsights) is allowed in case it's on in the dashboard; remove it if not.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Strict-Transport-Security: max-age=63072000; includeSubdomains
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
   Permissions-Policy: interest-cohort=(), accelerometer=(), ambient-light-sensor=(), battery=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), storage-access=(), sync-xhr=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()
-  Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'; connect-src 'self' *.hyvor.com ws://*.hyvor.com https://cloudflareinsights.com; script-src 'self' jaylooney.dev www.jaylooney.dev static.cloudflareinsights.com talk.hyvor.com; img-src 'self' jaylooney.dev www.jaylooney.dev data: talk.hyvor.com cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com streamable.com www.streamable.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.gstatic.com; style-src 'self' jaylooney.dev www.jaylooney.dev talk.hyvor.com cdn.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com;
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://www.jaylooney.dev https://static.cloudflareinsights.com; style-src 'self' https://www.jaylooney.dev; img-src 'self' https://www.jaylooney.dev; font-src 'self' https://www.jaylooney.dev; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Pages that opt in to KaTeX/Mermaid need inline styles (both libraries set style="" and
+# Mermaid writes a <style> into its SVGs). Add one block per opt-in page.
+/theme-demo/
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://www.jaylooney.dev https://static.cloudflareinsights.com; style-src 'self' https://www.jaylooney.dev 'unsafe-inline'; img-src 'self' https://www.jaylooney.dev data:; font-src 'self' https://www.jaylooney.dev; connect-src 'self' https://cloudflareinsights.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
 
 /*.js
   Cache-Control: public, max-age=604800, must-revalidate
