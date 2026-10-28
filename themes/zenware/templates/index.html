@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% if section.extra.cta %}<p>{{ section.extra.cta | markdown(inline=true) | safe }}</p>{% endif %}
+{% for p in paginator.pages %}
+<article>
+  <h2><a href="{{ p.permalink | safe }}">{{ p.title }}</a></h2>
+  <p class="meta"><time datetime="{{ p.date }}">{{ p.date | date(format="%B %e, %Y") }}</time></p>
+  {% if p.description %}<p>{{ p.description }}</p>{% elif p.summary %}{{ p.summary | safe }}{% endif %}
+</article>
+{% endfor %}
+{% if paginator.number_pagers > 1 %}
+<nav aria-label="Pagination"><p>
+  {% if paginator.previous %}<a href="{{ paginator.previous | safe }}" rel="prev">← Newer</a>{% endif %}
+  Page {{ paginator.current_index }} of {{ paginator.number_pagers }}
+  {% if paginator.next %}<a href="{{ paginator.next | safe }}" rel="next">Older →</a>{% endif %}
+</p></nav>
+{% endif %}
+{% endblock content %}

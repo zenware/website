@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block head %}<link rel="alternate" type="application/atom+xml" title="#{{ term.name }}" href="{{ term.permalink | safe }}atom.xml">{% endblock head %}
+{% block content %}
+<h1>#{{ term.name }}</h1>
+{{ m::list(pages=term.pages) }}
+{% endblock content %}

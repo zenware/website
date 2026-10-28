@@ -202,15 +202,15 @@ One of them said to check these some logs in `C:\$WINDOWS.~BT\Sources\Rollback` 
 ### The Checklist
 
 Both seem to indicate that it's likely an issue with an incompatible driver. And recommend the following steps.
-- [x] Have 20GB Free for Updating a 64-bit OS
-- [x] Run Windows Update a few times
-- [x] Check third-party drivers and download any updates
-- [x] Unplug Extra Hardware
-- [x] Check Device Manager for Errors
-- [x] Remove third-party Security Software
-- [x] Repair Hard Drive Errors `chkdsk/f C:` (from cmd.exe)
-- [ ] Do a Clean Restart into Windows
-- [x] Restore and Repair System Files `dism /Online /Cleanup-Image /Restorehealth`
+- ☑ Have 20GB Free for Updating a 64-bit OS
+- ☑ Run Windows Update a few times
+- ☑ Check third-party drivers and download any updates
+- ☑ Unplug Extra Hardware
+- ☑ Check Device Manager for Errors
+- ☑ Remove third-party Security Software
+- ☑ Repair Hard Drive Errors `chkdsk/f C:` (from cmd.exe)
+- ☐ Do a Clean Restart into Windows
+- ☑ Restore and Repair System Files `dism /Online /Cleanup-Image /Restorehealth`
 
 (I'm returning back to this checklist and checking off items as I do them, in all it took me around an hour to go through everything. Clean restart turned out to be unnecessary in this case.)
 

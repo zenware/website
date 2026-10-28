@@ -9,7 +9,7 @@ categories:
 
 The following is a selection of some Python testing libraries, commandline tools, etc. that I use, find cool, and have found real utility in when testing Python Code.
 
-### unittest
+## unittest
 The [unittest module](https://docs.python.org/3/library/unittest.html)
 ships with python since 2.7 and includes some basic
 [test discovery](https://docs.python.org/3/library/unittest.html#unittest-test-discovery).
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-### doctest
+## doctest
 The [doctest module](https://docs.python.org/3/library/doctest.html)
 also comes with python, but works in an entirely different way.
 It reads docstrings and parses them for content that looks like an
@@ -92,7 +92,7 @@ strategy. Essentially this just confirms that the examples in your
 documentation do work, and proof of that can actually be really strong if
 used well.
 
-### py.test
+## py.test
 [Pytest](https://docs.pytest.org/en/latest/) is the poster-child awesome
 testing project that is just more convenient to use than unittest, and has many
 plugins available to support any kind of scenario you could come up with. A
@@ -112,7 +112,7 @@ From this example you can see it's very simple to get started with pytest, even 
 Additionally, you can create some very complicated and expressive testing infrastructure with pytest.
 In fact literally every other testing module mentioned here can be integrated with pytest in a convenient way.
 
-### hypothesis
+## hypothesis
 The [hypothesis](https://hypothesis.readthedocs.io/en/latest/) module is almost like a fuzzer-gone-testing-framework.
 It helps to generate lots of different input meeting some defined constraints and essentially enables you to fuzz your
 program with each test run. It only reports on failing inputs, and will almost certainly help you catch edge-cases you
@@ -133,7 +133,7 @@ I have friends who will argue that testing at least from frameworks should be id
 Mostly I think that's a cop-out and it seems silly. Hypothesis returns enough information for you to reproduce the errors that it created.
 And it may create some errors that a human programmer isn't going to define on their own and overall I think it's a net benefit.
 
-### tox
+## tox
 [Tox](https://tox.readthedocs.io/en/latest/) is a sort of automation tool I think originally created for CI pipelines which allows you to
 test your python code against multiple versions of python with ease. It uses multiple actual versions of python and also
 virtual environments to isolate dependencies for each instance of a test run. This can help make sure your code is compatible
@@ -157,7 +157,7 @@ commands =
     pytest
 ```
 
-### Coverage.py
+## Coverage.py
 [Coverage.py](https://coverage.readthedocs.io/en/latest/) is a code coverage tool,
 it measures code coverage with runtime analysis. It produces reports that look like this
 
@@ -178,7 +178,7 @@ that just leads to low quality tests. One of the reasons I like `hypothesis`, an
 is that it makes more sense to test that a "larger" portion of your code is exhibiting the correct and consistent Behavior
 than it is to ensure that each small piece of code has a test case related to it in some way.
 
-### Radon
+## Radon
 [Radon](https://radon.readthedocs.io/en/latest/) is a Comprehensive metrics suite giving you Cyclomatic Complexity,
 Maintainability Index, and other things about your code that can be statistically analyzed.
 
